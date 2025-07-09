@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EcoSwap Design System - Sustainable & Cinematic 
+All colors MUST be HSL. Earth tones with vibrant greens.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Deep forest theme */
+    --background: 120 15% 8%;
+    --foreground: 120 20% 95%;
+
+    --card: 120 15% 10%;
+    --card-foreground: 120 20% 95%;
+
+    --popover: 120 15% 10%;
+    --popover-foreground: 120 20% 95%;
+
+    /* Primary - Vibrant Forest Green */
+    --primary: 145 65% 45%;
+    --primary-foreground: 120 20% 95%;
+    --primary-glow: 145 80% 55%;
+
+    /* Secondary - Earth Brown */
+    --secondary: 25 35% 25%;
+    --secondary-foreground: 120 20% 95%;
+
+    /* Muted - Sage Green */
+    --muted: 120 20% 15%;
+    --muted-foreground: 120 15% 65%;
+
+    /* Accent - Golden Yellow */
+    --accent: 45 85% 60%;
+    --accent-foreground: 120 15% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 120 20% 95%;
+
+    --border: 120 15% 20%;
+    --input: 120 15% 15%;
+    --ring: 145 65% 45%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(145 65% 45%), hsl(120 50% 35%));
+    --gradient-earth: linear-gradient(180deg, hsl(25 35% 25%), hsl(35 45% 35%));
+    --gradient-forest: linear-gradient(45deg, hsl(145 65% 45%), hsl(165 60% 40%));
+    --gradient-sunset: linear-gradient(90deg, hsl(45 85% 60%), hsl(25 75% 55%));
+    
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-depth: 0 20px 40px -10px hsl(0 0% 0% / 0.4);
+    --shadow-subtle: 0 4px 20px -4px hsl(0 0% 0% / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-bounce: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Light mode - Natural daytime colors */
+  .light {
+    --background: 45 15% 95%;
+    --foreground: 120 15% 15%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 120 15% 15%;
+    
+    --primary: 145 65% 35%;
+    --primary-glow: 145 70% 45%;
+    
+    --muted: 45 10% 90%;
+    --muted-foreground: 120 10% 45%;
+    
+    --border: 45 15% 85%;
+    --input: 45 15% 90%;
+    
+    /* Light mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(145 65% 35%), hsl(165 55% 45%));
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 3px;
+}
+
+/* Animations & Utilities */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary-glow) / 0.5);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-forest {
+    background: var(--gradient-forest);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-depth {
+    box-shadow: var(--shadow-depth);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Parallax utilities */
+  .parallax-slow {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: hsl(var(--card) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+}
