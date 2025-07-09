@@ -3,10 +3,6 @@
 
 A visually engaging, animated single-page landing page for a conceptual eco-friendly product, "EcoSwap". This project, named **earth-bloom-scroll**, demonstrates a modern frontend stack with a focus on a smooth user experience, beautiful animations, and a clean, responsive design.
 
-**[Live Demo](https://your-live-demo-link.com)** (Replace with your deployment link)
-
-![EcoSwap Screenshot](https://via.placeholder.com/1200x600.png/22c55e/ffffff?text=EcoSwap+Landing+Page)
-*(Replace this with a real screenshot of your project)*
 
 ---
 
